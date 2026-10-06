@@ -1,0 +1,10 @@
+src/app.vala
+src/window.vala
+src/backends.vala
+src/store.vala
+src/document.vala
+src/tools.vala
+src/search.vala
+src/service_client.vala
+widget/quick_widget.vala
+plugin/translate_tile.vala

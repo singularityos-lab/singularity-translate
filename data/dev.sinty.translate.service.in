@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=dev.sinty.translate
+Exec=@bindir@/singularity-translate --gapplication-service

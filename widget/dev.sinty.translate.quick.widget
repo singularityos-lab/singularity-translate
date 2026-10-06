@@ -1,0 +1,8 @@
+[Widget]
+Id=translate.quick
+ProviderId=dev.sinty.translate
+Name=Quick Translation
+IconName=preferences-desktop-locale-symbolic
+Sizes=2x2;4x2;4x4
+Module=libsingularity-translate-widget.so
+ModuleSymbol=singularity_translate_widget_new

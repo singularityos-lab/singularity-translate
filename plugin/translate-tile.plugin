@@ -1,0 +1,8 @@
+[Plugin]
+Module=translate-tile
+Name=Translate Clipboard
+Description=A quick settings tile that translates the copied text
+Authors=Singularity Team
+Website=https://sinty.dev
+Builtin=false
+X-Singularity-App=dev.sinty.translate

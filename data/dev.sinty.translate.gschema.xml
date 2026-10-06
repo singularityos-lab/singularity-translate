@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="dev.sinty.translate" path="/dev/sinty/translate/">
+    <key name="backend" type="s">
+      <choices>
+        <choice value="libretranslate"/>
+        <choice value="lingva"/>
+        <choice value="mymemory"/>
+      </choices>
+      <default>'libretranslate'</default>
+      <summary>Translation service</summary>
+      <description>The service used to translate text.</description>
+    </key>
+    <key name="libre-instance" type="s">
+      <default>'https://libretranslate.com'</default>
+      <summary>LibreTranslate instance</summary>
+      <description>Address of the LibreTranslate server. Its API key is kept in the keyring.</description>
+    </key>
+    <key name="lingva-instance" type="s">
+      <default>'https://lingva.ml'</default>
+      <summary>Lingva instance</summary>
+      <description>Address of the Lingva server.</description>
+    </key>
+    <key name="live" type="b">
+      <default>true</default>
+      <summary>Translate as you type</summary>
+      <description>Translate while typing instead of waiting for Ctrl+Enter or Translate.</description>
+    </key>
+    <key name="fallback" type="b">
+      <default>true</default>
+      <summary>Fall back to MyMemory</summary>
+      <description>Send short texts to MyMemory when the chosen service is down or busy.</description>
+    </key>
+    <key name="keep-history" type="b">
+      <default>true</default>
+      <summary>Keep history</summary>
+      <description>Remember recent translations on this computer.</description>
+    </key>
+    <key name="source" type="s">
+      <default>'auto'</default>
+      <summary>Source language</summary>
+      <description>Language code of the text to translate, or auto to detect it.</description>
+    </key>
+    <key name="target" type="s">
+      <default>''</default>
+      <summary>Target language</summary>
+      <description>Language code of the translation; empty picks one from the system language.</description>
+    </key>
+  </schema>
+</schemalist>

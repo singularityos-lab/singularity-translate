@@ -1,0 +1,51 @@
+{
+    "schema-id": "dev.sinty.translate",
+    "settings": [
+        {
+            "key": "backend",
+            "label": "Translation Service",
+            "type": "string",
+            "widget": "combo",
+            "options": [
+                { "id": "libretranslate", "label": "LibreTranslate", "subtitle": "Open source, self-hostable, may need an API key" },
+                { "id": "lingva", "label": "Lingva", "subtitle": "Private front end for Google Translate, can read aloud" },
+                { "id": "mymemory", "label": "MyMemory", "subtitle": "Free service with a daily limit, 500 characters at a time" }
+            ]
+        },
+        {
+            "key": "libre-instance",
+            "label": "LibreTranslate Instance",
+            "subtitle": "For example https://libretranslate.com",
+            "type": "string",
+            "widget": "entry"
+        },
+        {
+            "key": "lingva-instance",
+            "label": "Lingva Instance",
+            "subtitle": "For example https://lingva.ml",
+            "type": "string",
+            "widget": "entry"
+        },
+        {
+            "key": "live",
+            "label": "Translate as You Type",
+            "subtitle": "Otherwise press Ctrl+Enter or Translate",
+            "type": "boolean",
+            "widget": "toggle"
+        },
+        {
+            "key": "fallback",
+            "label": "Fall Back to MyMemory",
+            "subtitle": "Short texts go to MyMemory when the chosen service is down or busy",
+            "type": "boolean",
+            "widget": "toggle"
+        },
+        {
+            "key": "keep-history",
+            "label": "Keep History",
+            "subtitle": "Remember the last 50 translations on this computer",
+            "type": "boolean",
+            "widget": "toggle"
+        }
+    ]
+}

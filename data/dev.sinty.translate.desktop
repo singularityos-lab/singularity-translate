@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Translate
+Comment=Translate text between languages
+Exec=singularity-translate
+Icon=dev.sinty.translate
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=translate;translation;language;dictionary;libretranslate;lingva;
+StartupWMClass=dev.sinty.translate
+Actions=translate-clipboard;
+
+[Desktop Action translate-clipboard]
+Name=Translate Clipboard
+Exec=singularity-translate --translate-clipboard
