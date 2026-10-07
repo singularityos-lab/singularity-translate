@@ -454,6 +454,12 @@ namespace Singularity.Apps.Translate {
             copy_button = footer_button ("edit-copy-symbolic", _("Copy Translation"));
             copy_button.clicked.connect (() => copy_result ());
             footer.append (copy_button);
+            var share_button = footer_button ("singularity-share-symbolic", _("Share Translation"));
+            share_button.clicked.connect (() => {
+                string text = text_of (target_view);
+                if (text != "" && result_stack.visible_child_name == "text") Singularity.Share.text (this, text, _("Translation"));
+            });
+            footer.append (share_button);
             pane.append (footer);
             return pane;
         }

@@ -120,3 +120,7 @@ shared_module('translate-tile',
 install_data('plugin/translate-tile.plugin',
   install_dir: get_option('libdir') / 'singularity' / 'plugins' / 'translate-tile'
 )
+
+install_data('data/share-targets/dev.sinty.translate.text.ini',
+  install_dir: get_option('datadir') / 'singularity' / 'share-targets'
+)

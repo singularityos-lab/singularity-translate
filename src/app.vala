@@ -126,6 +126,9 @@ namespace Singularity.Apps.Translate {
                 show_in_window (text, translation, source, target != "" ? target : config.target);
             });
             add_action (text_action);
+            var translate_text = new SimpleAction ("translate-text", VariantType.STRING);
+            translate_text.activate.connect ((param) => show_in_window (param.get_string (), "", "auto", config.target));
+            add_action (translate_text);
             set_accels_for_action ("app.quit", { "<Control>q" });
             set_accels_for_action ("win.new", { "<Control>n" });
             set_accels_for_action ("app.settings", { "<Control>comma" });
