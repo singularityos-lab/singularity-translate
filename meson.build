@@ -34,6 +34,7 @@ executable('singularity-translate',
     'src/search.vala',
     'src/window.vala',
     'src/tools.vala',
+    'src/translate_bus.vala',
     'src/app.vala',
   ),
   dependencies: [gtk_dep, gee_dep, json_dep, soup_dep, secret_dep, libsingularity_dep],
@@ -89,6 +90,10 @@ configure_file(
   configuration: service_conf,
   install: true,
   install_dir: get_option('datadir') / 'dbus-1' / 'services'
+)
+
+install_data('data/capabilities/dev.sinty.Translate1.ini', 'data/capabilities/dev.sinty.TranslateService.ini',
+  install_dir: get_option('datadir') / 'singularity' / 'capabilities'
 )
 
 install_data('data/search-providers/dev.sinty.translate.ini',
