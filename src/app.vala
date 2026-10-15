@@ -95,7 +95,7 @@ namespace Singularity.Apps.Translate {
             set_menubar (menu);
             var quit = new SimpleAction ("quit", null);
             quit.activate.connect (() => {
-                foreach (var w in get_windows ()) w.close ();
+                foreach (var w in get_windows ().copy ()) w.close ();
             });
             add_action (quit);
             var settings_action = new SimpleAction ("settings", null);
@@ -179,7 +179,7 @@ namespace Singularity.Apps.Translate {
         }
 
         public void quick_translate () {
-            foreach (var w in get_windows ()) {
+            foreach (var w in get_windows ().copy ()) {
                 if (w is QuickTranslateDialog) w.close ();
             }
             var dlg = new QuickTranslateDialog (this);
