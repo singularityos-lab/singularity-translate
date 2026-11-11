@@ -51,6 +51,7 @@ namespace Singularity.Apps.Translate {
             config = new Config ();
             history = new History ();
             phrasebook = new Phrasebook ();
+            TranslateIntents.install (this);
             var provider = new CssProvider ();
             provider.load_from_string (CSS);
             StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, STYLE_PROVIDER_PRIORITY_USER + 1);
