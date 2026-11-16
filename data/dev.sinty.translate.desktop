@@ -6,6 +6,7 @@ Icon=dev.sinty.translate
 Terminal=false
 Type=Application
 Categories=Utility;
+X-Sinty-FormFactors=desktop;tablet;phone
 Keywords=translate;translation;language;dictionary;libretranslate;lingva;
 StartupWMClass=dev.sinty.translate
 Actions=translate-clipboard;
