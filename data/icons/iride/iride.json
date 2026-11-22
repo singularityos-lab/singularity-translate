@@ -1,0 +1,497 @@
+{
+ "format": 1,
+ "canvas": [
+  236,
+  236
+ ],
+ "box": [
+  0,
+  0,
+  236,
+  236
+ ],
+ "stack": [
+  {
+   "shadow": {
+    "dx": 0,
+    "dy": 5,
+    "blur": 6,
+    "color": "#0d1a40",
+    "opacity": 0.38,
+    "region": [
+     -20,
+     -20,
+     276,
+     276
+    ]
+   },
+   "stack": [
+    {
+     "layer": "layers/000.svg",
+     "piece": "question"
+    },
+    {
+     "layer": "layers/001.svg",
+     "piece": "question"
+    },
+    {
+     "clip": "M44 22h96c16.6 0 30 13.4 30 30v50c0 16.6-13.4 30-30 30H72l-34 26 6-26h0c-16.6 0-30-13.4-30-30V52c0-16.6 13.4-30 30-30z",
+     "stack": [
+      {
+       "layer": "layers/002.svg",
+       "piece": "question"
+      },
+      {
+       "rim": "M44 22h96c16.6 0 30 13.4 30 30v50c0 16.6-13.4 30-30 30H72l-34 26 6-26h0c-16.6 0-30-13.4-30-30V52c0-16.6 13.4-30 30-30z",
+       "light": [
+        14.0,
+        22.0,
+        170.0,
+        158.0
+       ],
+       "piece": "question"
+      }
+     ]
+    },
+    {
+     "layer": "layers/003.svg",
+     "piece": "letter"
+    }
+   ]
+  },
+  {
+   "shadow": {
+    "dx": 0,
+    "dy": 5,
+    "blur": 6,
+    "color": "#0d1a40",
+    "opacity": 0.38,
+    "region": [
+     -20,
+     -20,
+     276,
+     276
+    ]
+   },
+   "stack": [
+    {
+     "layer": "layers/004.svg",
+     "piece": "answer"
+    },
+    {
+     "layer": "layers/005.svg",
+     "piece": "answer"
+    },
+    {
+     "clip": "M96 84h96c16.6 0 30 13.4 30 30v50c0 16.6-13.4 30-30 30h0l6 26-34-26H96c-16.6 0-30-13.4-30-30v-50c0-16.6 13.4-30 30-30z",
+     "stack": [
+      {
+       "layer": "layers/006.svg",
+       "piece": "answer"
+      },
+      {
+       "rim": "M96 84h96c16.6 0 30 13.4 30 30v50c0 16.6-13.4 30-30 30h0l6 26-34-26H96c-16.6 0-30-13.4-30-30v-50c0-16.6 13.4-30 30-30z",
+       "light": [
+        66.0,
+        84.0,
+        222.0,
+        220.0
+       ],
+       "piece": "answer"
+      }
+     ]
+    },
+    {
+     "layer": "layers/007.svg",
+     "piece": "ideogram"
+    }
+   ]
+  }
+ ],
+ "motion": [
+  {
+   "piece": "question",
+   "origin": [
+    92.0,
+    90.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      27.14,
+      27.14
+     ],
+     "at": 0,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -16.048,
+      -16.048
+     ],
+     "at": 170,
+     "duration": 120,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      10.856,
+      10.856
+     ],
+     "at": 290,
+     "duration": 110,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -6.844,
+      -6.844
+     ],
+     "at": 400,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      3.776,
+      3.776
+     ],
+     "at": 500,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -1.18,
+      -1.18
+     ],
+     "at": 600,
+     "duration": 90,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.85,
+      0.85
+     ],
+     "at": 0,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      1.05,
+      1.05
+     ],
+     "at": 170,
+     "duration": 130,
+     "ease": "linear"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.98,
+      0.98
+     ],
+     "at": 300,
+     "duration": 120,
+     "ease": "linear"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      1
+     ],
+     "at": 780,
+     "duration": 75,
+     "ease": "linear"
+    }
+   ]
+  },
+  {
+   "piece": "letter",
+   "origin": [
+    54.0,
+    64.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      27.14,
+      27.14
+     ],
+     "at": 0,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -16.048,
+      -16.048
+     ],
+     "at": 170,
+     "duration": 120,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      10.856,
+      10.856
+     ],
+     "at": 290,
+     "duration": 110,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -6.844,
+      -6.844
+     ],
+     "at": 400,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      3.776,
+      3.776
+     ],
+     "at": 500,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -1.18,
+      -1.18
+     ],
+     "at": 600,
+     "duration": 90,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      1.96,
+      0.9
+     ],
+     "at": 60,
+     "duration": 140,
+     "ease": "linear"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.04,
+      1.1
+     ],
+     "at": 200,
+     "duration": 160,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "answer",
+   "origin": [
+    144.0,
+    152.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      -27.14,
+      -27.14
+     ],
+     "at": 90,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      16.048,
+      16.048
+     ],
+     "at": 260,
+     "duration": 120,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -10.856,
+      -10.856
+     ],
+     "at": 380,
+     "duration": 110,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      6.844,
+      6.844
+     ],
+     "at": 490,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -3.776,
+      -3.776
+     ],
+     "at": 590,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      1.18,
+      1.18
+     ],
+     "at": 690,
+     "duration": 90,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.85,
+      0.85
+     ],
+     "at": 90,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      1.05,
+      1.05
+     ],
+     "at": 260,
+     "duration": 130,
+     "ease": "linear"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.98,
+      0.98
+     ],
+     "at": 390,
+     "duration": 120,
+     "ease": "linear"
+    }
+   ]
+  },
+  {
+   "piece": "ideogram",
+   "origin": [
+    144.0,
+    138.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      -27.14,
+      -27.14
+     ],
+     "at": 90,
+     "duration": 170,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      16.048,
+      16.048
+     ],
+     "at": 260,
+     "duration": 120,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -10.856,
+      -10.856
+     ],
+     "at": 380,
+     "duration": 110,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      6.844,
+      6.844
+     ],
+     "at": 490,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      -3.776,
+      -3.776
+     ],
+     "at": 590,
+     "duration": 100,
+     "ease": "out"
+    },
+    {
+     "kind": "translate",
+     "from": [
+      1.18,
+      1.18
+     ],
+     "at": 690,
+     "duration": 90,
+     "ease": "out"
+    },
+    {
+     "kind": "scale",
+     "from": [
+      0.04,
+      1
+     ],
+     "at": 340,
+     "duration": 220,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 320,
+     "duration": 60,
+     "ease": "linear"
+    }
+   ]
+  }
+ ]
+}

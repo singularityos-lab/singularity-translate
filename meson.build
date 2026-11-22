@@ -58,6 +58,27 @@ install_data('data/icons/dev.sinty.translate.svg',
   install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps'
 )
 
+iride = find_program('iride', required: get_option('iride'))
+if iride.found()
+  custom_target('iride-icon',
+    input: 'data/icons/iride/iride.json',
+    output: 'dev.sinty.translate.iride',
+    depend_files: files(
+      'data/icons/iride/layers/000.svg',
+      'data/icons/iride/layers/001.svg',
+      'data/icons/iride/layers/002.svg',
+      'data/icons/iride/layers/003.svg',
+      'data/icons/iride/layers/004.svg',
+      'data/icons/iride/layers/005.svg',
+      'data/icons/iride/layers/006.svg',
+      'data/icons/iride/layers/007.svg',
+    ),
+    command: [iride, 'build', meson.current_source_dir() / 'data' / 'icons' / 'iride', '@OUTPUT@'],
+    install: true,
+    install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps'
+  )
+endif
+
 backends_test = executable('backends-test',
   core_sources + files('tests/backends_test.vala'),
   dependencies: [dependency('gio-2.0'), gee_dep, json_dep, soup_dep, secret_dep],
