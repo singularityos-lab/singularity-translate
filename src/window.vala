@@ -1202,6 +1202,47 @@ namespace Singularity.Apps.Translate {
             source_view.grab_focus ();
         }
 
+        public Variant save_migration () {
+            var d = new VariantDict ();
+            d.insert_value ("view", new Variant.string (main_stack.visible_child_name));
+            d.insert_value ("history", new Variant.boolean (get_sidebar_visible ()));
+            d.insert_value ("source", new Variant.string (config.source));
+            d.insert_value ("target", new Variant.string (config.target));
+            d.insert_value ("detected", new Variant.string (detected));
+            d.insert_value ("text", new Variant.string (text_of (source_view)));
+            d.insert_value ("result", new Variant.string (result_stack.visible_child_name));
+            d.insert_value ("translation", new Variant.string (text_of (target_view)));
+            d.insert_value ("note", new Variant.string (provider_label.label));
+            return d.end ();
+        }
+
+        public void restore_migration (Variant data) {
+            var d = new VariantDict (data);
+            string source = (d.lookup_value ("source", VariantType.STRING) ?? new Variant.string (config.source)).get_string ();
+            string target = (d.lookup_value ("target", VariantType.STRING) ?? new Variant.string (config.target)).get_string ();
+            string text = (d.lookup_value ("text", VariantType.STRING) ?? new Variant.string ("")).get_string ();
+            string result = (d.lookup_value ("result", VariantType.STRING) ?? new Variant.string ("text")).get_string ();
+            string translation = (d.lookup_value ("translation", VariantType.STRING) ?? new Variant.string ("")).get_string ();
+            string note = (d.lookup_value ("note", VariantType.STRING) ?? new Variant.string ("")).get_string ();
+            cancel_pending ();
+            if (config.source != source) config.source = source;
+            if (config.target != target) config.target = target;
+            detected = (d.lookup_value ("detected", VariantType.STRING) ?? new Variant.string ("")).get_string ();
+            syncing = true;
+            source_view.buffer.text = text;
+            syncing = false;
+            source_placeholder.visible = text == "";
+            update_count ();
+            last_text = "%s|%s|%s|%s".printf (backend.id, config.source, config.target, text);
+            show_result (translation, note);
+            sync_languages ();
+            if (result != "text" && text.strip () != "") translate_now ();
+            var view = d.lookup_value ("view", VariantType.STRING);
+            if (view != null && view.get_string () != main_stack.visible_child_name) toggle_phrasebook ();
+            var history = d.lookup_value ("history", VariantType.BOOLEAN);
+            if (history != null) set_sidebar_visible (history.get_boolean ());
+        }
+
         private void show_toast (string text) {
             if (toast == null) {
                 toast = new Label ("");

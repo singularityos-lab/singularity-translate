@@ -2,7 +2,7 @@ using Gtk;
 
 namespace Singularity.Apps.Translate {
 
-    public class TranslateApp : Singularity.Application {
+    public class TranslateApp : Singularity.Application, Singularity.Migration.Migratable {
         public Config config;
         public History history;
         public Phrasebook phrasebook;
@@ -177,6 +177,31 @@ namespace Singularity.Apps.Translate {
                 if (w is TranslateWindow) return (TranslateWindow) w;
             }
             return new TranslateWindow (this);
+        }
+
+        public Variant save_model () {
+            return new VariantDict ().end ();
+        }
+
+        public async void restore_model (Variant model) throws Error {
+        }
+
+        public string window_kind (Gtk.Window w) {
+            return (w is TranslateWindow) ? "translate" : "";
+        }
+
+        public Variant save_window (Gtk.Window w) {
+            return ((TranslateWindow) w).save_migration ();
+        }
+
+        public async Gtk.Window? rebuild_window (string kind, Variant data) throws Error {
+            if (kind != "translate") return null;
+            foreach (var old in get_windows ().copy ()) {
+                if (old is TranslateWindow) old.destroy ();
+            }
+            var w = new TranslateWindow (this);
+            w.restore_migration (data);
+            return w;
         }
 
         public void quick_translate () {
