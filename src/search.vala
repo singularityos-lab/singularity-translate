@@ -146,7 +146,7 @@ namespace Singularity.Apps.Translate {
         public override void launch_search (string[] terms, uint32 timestamp) {
             string target, text;
             if (!parse (terms, out target, out text)) {
-                app.activate ();
+                app.show_window ();
                 return;
             }
             var job = done[make_id (target, text)];

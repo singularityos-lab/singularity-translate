@@ -2,7 +2,7 @@ using Gtk;
 
 namespace Singularity.Apps.Translate {
 
-    public class TranslateApp : Singularity.Application, Singularity.Migration.Migratable {
+    public class TranslateApp : Singularity.Application, Singularity.Migration.Migratable, Singularity.Startup.Bootable {
         public Config config;
         public History history;
         public Phrasebook phrasebook;
@@ -163,7 +163,30 @@ namespace Singularity.Apps.Translate {
             set_accels_for_action ("app.translate-clipboard", { "<Control><Shift>t" });
         }
 
-        public override void activate () {
+        public Singularity.Startup.Plan build_plan (Singularity.Startup.Request request) {
+            var plan = new Singularity.Startup.Plan ();
+            plan.version = "translate-1";
+            if (request.kind == Singularity.Startup.RequestKind.SERVICE) {
+                plan.main ("ready", Singularity.Startup.Category.PREPARE, (c) => {})
+                    .reaches (Singularity.Startup.Milestone.SHELL_READY)
+                    .reaches (Singularity.Startup.Milestone.CONTENT_READY)
+                    .reaches (Singularity.Startup.Milestone.INTERACTIVE);
+                return plan;
+            }
+            plan.main ("window", Singularity.Startup.Category.SHELL, (c) => {
+                show_window ();
+                c.window = get_active_window ();
+            }).reaches (Singularity.Startup.Milestone.SHELL_READY)
+              .reaches (Singularity.Startup.Milestone.CONTENT_READY)
+              .reaches (Singularity.Startup.Milestone.INTERACTIVE);
+            return plan;
+        }
+
+        public void handle_request (Singularity.Startup.Request request) {
+            show_window ();
+        }
+
+        internal void show_window () {
             if (quick_pending) {
                 quick_pending = false;
                 quick_translate ();
